@@ -1,0 +1,81 @@
+
+  /* ------------------Heading--------------- */
+.heading {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    
+    font-size: 30px;
+    text-align: center;
+}
+
+  /* ------------------Error  Message  Display--------------- */
+.error {
+    color: red;
+  }
+  /* ------------------Main Screen---------------- */
+.main {
+   
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 965px;
+  }
+  /* ------------------Container---------------- */
+  .container 
+  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 650px;
+    width: 600px;
+    text-align: center;
+    border: 8px solid gainsboro;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+ /* ------------------Form--------------- */
+  .form-container h1 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+ /* ------------------Labels--------------- */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+ /* ------------------Input Tag--------------- */
+  input[type="text"],
+  input[type="password"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+   /* ------------------Button--------------- */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
