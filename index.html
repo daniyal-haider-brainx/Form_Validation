@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <!-- Main Screen -->
-  <div class="main">
+   <!-- Main Screen -->
+   <div class="main">
     <!-- Form Container -->
     <div class="container">
       <!-- Header -->
@@ -23,39 +23,39 @@
       <form id="myForm">
         <!-- Form Fields -->
         <div class="first_name">
-          <label for="firstName">First Name:</label>
+          <label for="firstName">First Name:<span class="required"></span></label>
           <input type="text" id="firstName" name="firstName" required>
-          <div id="firstNameError" class="error"></div> <!-- Error message element for First Name -->
+          <div id="firstNameError" class="error"></div> 
         </div>
         <div class="last_name">
-          <label for="lastName">Last Name:</label>
+          <label for="lastName">Last Name:<span class="required"></span></label>
           <input type="text" id="lastName" name="lastName" required>
-          <div id="lastNameError" class="error"></div> <!-- Error message element for Last Name -->
+          <div id="lastNameError" class="error"></div>
         </div>
         <div class="password">
-          <label for="password">Password:</label>
+          <label for="password">Password:<span class="required"></span></label>
           <input type="password" id="password" name="password" required>
-          <div id="passwordError" class="error"></div> <!-- Error message element for Password -->
+          <div id="passwordError" class="error"></div> 
         </div>
         <div class="confirm_password">
-          <label for="confirmPassword">Confirm Password:</label>
+          <label for="confirmPassword">Confirm Password:<span class="required"></span></label>
           <input type="password" id="confirmPassword" name="confirmPassword" required>
-          <div id="confirmPasswordError" class="error"></div> <!-- Error message element for Confirm Password -->
+          <div id="confirmPasswordError" class="error"></div> 
         </div>
         <div class="emails">
-          <label for="notificationEmails">Notification Emails:</label>
+          <label for="notificationEmails">Notification Emails:<span class="required"></span></label>
           <input type="text" id="notificationEmails" name="notificationEmails" required>
-          <div id="notificationEmailsError" class="error"></div> <!-- Error message element for Notification Emails -->
+          <div id="notificationEmailsError" class="error"></div>
         </div>
         <div class="age">
-          <label for="age">Age:</label>
+          <label for="age">Age:<span class="required"></span></label>
           <input type="text" id="age" name="age" required>
-          <div id="ageError" class="error"></div> <!-- Error message element for Age -->
+          <div id="ageError" class="error"></div>
         </div>
         <div class="contact_number">
-          <label for="contactNumber">Contact Number:</label>
+          <label for="contactNumber">Contact Number:<span class="required"></span></label>
           <input type="text" id="contactNumber" name="contactNumber" required>
-          <div id="contactNumberError" class="error"></div> <!-- Error message element for Contact Number -->
+          <div id="contactNumberError" class="error"></div> 
         </div>
         <!-- Submit Button -->
         <div class="submit_button">
@@ -64,6 +64,7 @@
       </form>
     </div>
   </div>
+
 </body>
 
 </html>

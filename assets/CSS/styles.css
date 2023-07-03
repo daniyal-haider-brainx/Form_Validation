@@ -12,7 +12,13 @@
   /* ------------------Error  Message  Display--------------- */
 .error {
     color: red;
+    font-size: 12px;
   }
+  .required::after {
+    content: "*";
+    color: red;
+  }
+
   /* ------------------Main Screen---------------- */
 .main {
    
@@ -73,8 +79,12 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+
   }
 
+  button:disabled {
+    opacity: 0.5;
+  }
   button[type="submit"]:hover {
     background-color: #45a049;
   }
