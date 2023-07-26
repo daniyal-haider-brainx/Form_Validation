@@ -1,19 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Run the code when the DOM content is loaded
 
-  const form = document.getElementById('myForm');
-  const firstNameInput = document.getElementById('firstName');
-  const lastNameInput = document.getElementById('lastName');
-  const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('confirmPassword');
-  const notificationEmailsInput = document.getElementById('notificationEmails');
-  const ageInput = document.getElementById('age');
-  const contactNumberInput = document.getElementById('contactNumber');
+  const form = document.getElementById('validationForm');
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('lastName');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const notificationEmails = document.getElementById('notificationEmails');
+  const age = document.getElementById('age');
+  const contactNumber = document.getElementById('contactNumber');
   const submitButton = document.getElementById('submitButton');
 
   let isValid = false; // Initialize form as invalid
 
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     // Add event listener to the form's submit event
     event.preventDefault(); // Prevent form submission
     clearErrorMessages(); // Clear any existing error messages
@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const inputs = [
-    firstNameInput,
-    lastNameInput,
-    passwordInput,
-    confirmPasswordInput,
-    notificationEmailsInput,
-    ageInput,
-    contactNumberInput
+    firstName,
+    lastName,
+    password,
+    confirmPassword,
+    notificationEmails,
+    age,
+    contactNumber
   ];
 
   for (const input of inputs) {
     // Add event listener to each input field's blur event
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', function () {
       validateField(input); // Validate the specific field
       updateSubmitButtonState(); // Update the state of the submit button
     });
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!validateField(input)) {
         // If a field is invalid
         isValid = false; // Set isValid to false
+        break;
       }
     }
 
@@ -64,12 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // If the field is empty
       displayErrorMessage(input, `${getFieldName(input)}`); // Display the error message
       isValid = false; // Set isValid to false
-    } else {
+    }
+    else {
       switch (input) {
-        case firstNameInput:
-        case lastNameInput:
+        case firstName:
+        case lastName:
           break; // No additional validation for first name and last name fields
-        case passwordInput:
+        case password:
           if (!validatePassword(inputValue)) {
             // If the password is invalid
             displayErrorMessage(input, 'Password must have least 8 characters,one uppercase,lowercase letter and numeric'); // Display the error message
@@ -79,16 +81,18 @@ document.addEventListener('DOMContentLoaded', function() {
             clearErrorMessage(input); // Clear the error message
           }
           break;
-        case confirmPasswordInput:
-          if (inputValue !== passwordInput.value.trim()) {
+        case confirmPassword:
+          if (inputValue !== password.value.trim()) {
             // If the confirmation password does not match the password
             displayErrorMessage(input, 'Passwords do not match'); // Display the error message
             isValid = false; // Set isValid to false
-          } else {
+            break;
+          }
+          else {
             clearErrorMessage(input); // Clear the error message
           }
           break;
-        case notificationEmailsInput:
+        case notificationEmails:
           if (!validateEmails(inputValue)) {
             // If the emails are invalid
             displayErrorMessage(input, 'Emails are invalid'); // Display the error message
@@ -97,20 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
             clearErrorMessage(input); // Clear the error message
           }
           break;
-        case ageInput:
+        case age:
           if (!validateAge(inputValue)) {
             // If the age is invalid
             displayErrorMessage(input, 'Age must be between 18 and 150'); // Display the error message
             isValid = false; // Set isValid to false
+            break;
           } else {
             clearErrorMessage(input); // Clear the error message
           }
           break;
-        case contactNumberInput:
+        case contactNumber:
           if (!validateContactNumber(inputValue)) {
             // If the contact number is invalid
             displayErrorMessage(input, 'Contact Number is invalid'); // Display the error message
             isValid = false; // Set isValid to false
+            break;
           } else {
             clearErrorMessage(input); // Clear the error message
           }
@@ -127,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSubmitButtonState() {
     const allInputsValid = inputs.every(input => input.value.trim() !== '' && input.checkValidity());
     // Check if all inputs have non-empty values and pass HTML5 validation
-  
+
     submitButton.disabled = !allInputsValid; // Enable or disable the submit button based on the validation result
-  
+
     if (submitButton.disabled) {
       submitButton.style.opacity = '0.7'; // Set low opacity for disabled button
     } else {
